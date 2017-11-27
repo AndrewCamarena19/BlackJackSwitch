@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">BlackJackSwitch</string>
+    <string name="PlayBtn">Play</string>
+    <string name="RulesBtn">Rules</string>
+    <string name="StartingStackTxt">Enter a Starting Amount</string>
+    <string name="HitBtn">Hit</string>
+    <string name="StayBtn">Stay</string>
+    <string name="Split">Split</string>
+    <string name="DoubleDown">Double Down</string>
+    <string name="Switch">Switch</string>
+    <string name="Insurance">Would you like buy insurance?</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="CardDescription">CardImage</string>
+    <string name="bet">Bet</string>
+    <string name="dealer">Dealer</string>
+    <string name="hand_1">Hand 1</string>
+    <string name="hand_2">Hand 2</string>
+    <string name="bets">Bet:</string>
+    <string name="hand_1s">Hand 1</string>
+    <string name="hand_2s">Hand 2</string>
+    <string name="show_count">Show Count</string>
+</resources>

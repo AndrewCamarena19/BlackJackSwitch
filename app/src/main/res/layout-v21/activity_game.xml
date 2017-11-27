@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_game"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.example.hsport.blackjackswitch.GameActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackjackfelt">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:id="@+id/ButtonSpace">
+
+        <Button
+            android:text="@string/Split"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnSplit"
+            android:background="@color/colorBackGrnd"
+            android:fontFamily="serif"
+            android:textColor="@color/colorBtnColor"
+            android:elevation="0dp" />
+
+        <Button
+            android:text="@string/DoubleDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnDouble"
+            android:background="@color/colorBackGrnd"
+            android:fontFamily="serif"
+            android:textColor="@color/colorBtnColor"
+            android:elevation="0dp" />
+
+        <Button
+            android:text="@string/Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnSwitch"
+            android:background="@color/colorBackGrnd"
+            android:fontFamily="serif"
+            android:textColor="@color/colorBtnColor"
+            android:elevation="0dp" />
+
+        <Button
+            android:text="@string/StayBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnStay"
+            android:background="@color/colorBackGrnd"
+            android:fontFamily="serif"
+            android:textColor="@color/colorBtnColor"
+            android:elevation="0dp" />
+
+        <Button
+            android:text="@string/HitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnHit"
+            android:background="@color/colorBackGrnd"
+            android:fontFamily="serif"
+            android:textColor="@color/colorBtnColor"
+            android:elevation="0dp" />
+
+        <EditText
+            android:layout_height="match_parent"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/ToBet"
+            android:hint="Bet:"
+            android:layout_width="70dp" />
+
+        <Button
+            android:text="Bet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnBet"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="110dp"
+        android:id="@+id/InsuranceSpace">
+
+        <TextView
+            android:text="Dealer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DealerValue"
+            android:textAlignment="center"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="290dp" />
+
+        <Button
+            android:text="@string/Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnYes"
+            android:textAlignment="center"
+            android:layout_alignEnd="@+id/TVInsurance"
+            android:layout_below="@+id/TVInsurance" />
+
+        <Button
+            android:text="@string/No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BtnNo"
+            android:textAlignment="center"
+            android:layout_alignStart="@+id/TVInsurance"
+            android:layout_below="@+id/TVInsurance" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TVInsurance"
+            android:text="@string/Insurance"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ToggleButton
+            android:text="Show Count"
+            android:id="@+id/CurrentCountTG"
+            android:layout_width="75dp"
+            android:checked="false"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/CurrentCountLabel"
+            android:textAlignment="center"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/HandValueSpace"
+        android:layout_gravity="center_vertical"
+        android:layout_height="32dp">
+
+        <TextView
+            android:text="Hand 2"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand2Value"
+            android:textAlignment="viewStart"
+            android:layout_weight=".2"
+            android:elevation="0dp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:text="Hand 1"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand1Value"
+            android:textAlignment="viewStart"
+            android:layout_width="0dp"
+            android:elevation="0dp"
+            android:layout_weight=".2" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/SplitHand1Value"
+            android:textAlignment="viewStart"
+            android:layout_weight=".2"
+            android:elevation="0dp" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_height="match_parent"
+            android:id="@+id/SplitHand2Value"
+            android:textAlignment="viewStart"
+            android:layout_width="0dp"
+            android:elevation="0dp"
+            android:layout_weight=".2" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_height="match_parent"
+            android:id="@+id/SplitHand3Value"
+            android:textAlignment="viewStart"
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:elevation="0dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/CardSpace"
+        android:weightSum="1"
+        android:layout_height="25dp">
+
+        <TextView
+            android:text="Hand 2"
+            android:id="@+id/Hand2"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.20"
+            android:layout_width="0dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:text="Hand 1"
+            android:id="@+id/Hand1"
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:text="TextView"
+            android:id="@+id/SplitHand1"
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:text="TextView"
+            android:id="@+id/SplitHand2"
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:text="TextView"
+            android:id="@+id/SplitHand3"
+            android:layout_weight=".2"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="bottom" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="591dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/DealerSpace"
+        android:weightSum="1">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="50dp"
+            android:id="@+id/Money"
+            android:layout_weight="0.37"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:text="Dealer"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:id="@+id/DealerHand"
+            android:layout_marginEnd="0dp"
+            android:textAlignment="center"
+            android:layout_weight="0.21"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="bottom"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:id="@+id/CardImage"
+        android:layout_marginTop="195dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand2Cards"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card2"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand2Card6"
+                android:layout_marginLeft="50dp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand1Cards"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card2"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand1Card6"
+                android:layout_marginLeft="50dp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand3Cards"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card1"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card2"
+                android:layout_marginLeft="10dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand3Card6"
+                android:layout_marginLeft="50dp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand4Cards"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card1"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card2"
+                android:layout_marginLeft="10dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand4Card6"
+                android:layout_marginLeft="50dp"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/Hand5Cards"
+            android:layout_weight=".2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card1"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card2"
+                android:layout_marginLeft="10dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/Hand5Card6"
+                android:visibility="invisible"
+                android:layout_marginStart="50dp"
+                android:contentDescription="@string/CardDescription" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:id="@+id/DealerCardImage">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            android:id="@+id/DealerHandImage">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard2"
+                android:layout_marginLeft="10dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard3"
+                android:layout_marginLeft="20dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard4"
+                android:layout_marginLeft="30dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard5"
+                android:layout_marginLeft="40dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/da"
+                android:id="@+id/DealerCard6"
+                android:layout_marginLeft="50dp"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </FrameLayout>
+
+</FrameLayout>
